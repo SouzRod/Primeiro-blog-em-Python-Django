@@ -9,9 +9,10 @@ body {
 }
 
 .page-header {
-    background-color: #ff9400;
+    background-color: #0000FF;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 20px 20px 40px;
+    text-align: center;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -22,6 +23,7 @@ body {
 
 .content {
     margin-left: 40px;
+
 }
 
 h1, h2, h3, h4 {
@@ -48,6 +50,7 @@ h1, h2, h3, h4 {
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+    margin-top: 20px;
 }
 
 .post {
@@ -58,6 +61,11 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-.cont{
-    height:-50%;
+div.col-md-6{
+    box-shadow: 1px 1px 5px rgba(0.0.0.5); 
 }
+
+div.row{
+    margin-top:-20px; 
+}
+
