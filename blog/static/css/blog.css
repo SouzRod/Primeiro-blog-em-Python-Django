@@ -62,13 +62,12 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-div.col-md-6{
-    box-shadow: 1px 1px 5px rgba(0.0.0.5);
+/* div.col-md-6{
+    box-shadow: 2px 2px 20px rgba(03.04.04.5);
     background-color: #ffffff;
      
-}
+} */
 
 div.row{
-    margin-top:-20px; 
+    margin-top:0px; 
 }
-
