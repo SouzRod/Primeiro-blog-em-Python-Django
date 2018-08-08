@@ -2,8 +2,30 @@
 {% load static %}
 {% block content %}
     <h1 class="TituloNewPost">New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-dark">Save</button>
+    <br/>
+    <form method="POST" class="post-form ">
+        {% csrf_token %}
+        
+        <div class="form-row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Title: </label>
+                    {{form.title}}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label>Text: </label>
+                    {{form.text}}
+                </div>
+            </div>
+        </div>
+           
+        <div class="pull-middle">
+            <button type="submit" class="save btn btn-dark rounded">Save</button>
+        </div>
     </form>
 {% endblock %}
