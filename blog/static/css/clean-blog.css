@@ -417,13 +417,13 @@ footer .copyright {
 
 /* .TituloPost{
   font-family: 'Headland One', serif;
-}
+}*/
 
 .post-subtitle{
-  font-family: 'Headland One', serif;
   font-size: 16pt;
+  text-align: justify;
 }
 
-.TituloNewPost{
+/* .TituloNewPost{
   font-family: 'Headland One', serif;
 } */
