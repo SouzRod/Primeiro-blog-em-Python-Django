@@ -1,16 +1,23 @@
 {% extends 'blog/base.html' %}
 {% load static %}
+{% block title %}
+    <h1>Detalhes</h1>
+    <span class="subheading">Um blog para treinamento usando Django & Bootstrap</span>
+{% endblock %}
 {% block content %}
-    <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% endif %}
+    <div class="post">          
+            
         {% if user.is_authenticated %}
             <a class="far fa-edit" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <div class="post-preview">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            {% if post.published_date %}
+                <p class="post-meta">Posted by
+                <a href="#">{{ post.author }} </a>
+                {{ post.published_date }}</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

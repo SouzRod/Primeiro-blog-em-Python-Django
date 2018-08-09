@@ -1,7 +1,11 @@
 {% extends 'blog/base.html' %}
 {% load static %}
+{% block title %}
+    <h1>Postagem</h1>
+    <span class="subheading">Um blog para treinamento usando Django & Bootstrap</span>
+{% endblock %}
 {% block content %}
-    <h1 class="TituloNewPost">New post</h1>
+    <h1 class="TituloNewPost">Postagem</h1>
     <br/>
     <form method="POST" class="post-form ">
         {% csrf_token %}
