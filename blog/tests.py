@@ -8,7 +8,7 @@ from html import *
 from django.test import Client
 
 from blog.forms import PostForm
-from blog.views import post_new
+from blog.views import *
 from django.contrib.auth.models import User
 
 
@@ -25,17 +25,7 @@ class PrimeiroTest(TestCase):
         self.c = Client()
         self.u = User.objects.create_user(
             username='javed', email='javed@javed.com', password='my_secret')
-        #     texto = '''Batatinha quando nasce espalha a rama pelo chão.
-# menininha quando dorme põe a mão no coração.
-# Sou pequenininha do tamanho de um botão, 
-# carrego papai no bolso e mamãe no coração
-# O bolso furou e o papai caiu no chão.
-# Mamãe que é mais querida ficou no coração.'''
-
-    def test(self):
-        # print('algo aqui')
-        self.assertEqual('a', 'a')
-
+        
     def test_verificar_titulo_no_index(self):
         response = self.c.get("")
         self.assertIn('<title>Blog do Django</title>', str(response.content), 'A pagina não contem este dado')
@@ -60,17 +50,26 @@ class PrimeiroTest(TestCase):
         self.assertIn('<h1>Detalhes</h1>', str(response.content))
 
 
-    def test_index_retorna_status_200(self):
-        form_data = {'title':'Título', 'text':'Texto da Postagem 2'}
-        self.c.force_login(self.u)
-
-        response = self.c.post('/post/new/', form_data, follow=True)
+    def test_pagina_index_retorna_status_200(self):
+        response = self.c.get('')
         self.assertEqual(200, response.status_code)
 
 
-    def test_about_retorna_status_200(self):
+    def test_pagina_about_retorna_status_200(self):
         response = self.c.get('/sobre')
-        self.assertEqual(response.status_code, 200)    
+        self.assertEqual(response.status_code, 200)
+
+
+    def test_sobre_entrada_pelo_metodo(self):
+        request = 'http://127.0.0.1:8000/sobre'
+        response = sobre(request)
+        self.assertEqual(200, response.status_code)    
+
+    def test_index_entrada_pelo_metodo(self):
+        request = 'http://127.0.0.1:8000'
+        response = index(request)
+        self.assertEqual(200, response.status_code)
+
 
 
 
